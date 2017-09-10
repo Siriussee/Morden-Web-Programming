@@ -1,0 +1,51 @@
+body {
+    background-image: url('img/sirius.png');
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    margin-top: 200px;
+    font-size: 80px;
+}
+
+h3 {
+    color: white;
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 200px;
+}
+
+a.post:hover,
+a.detail:hover {
+    color: darkblue;
+}
+
+a.post {
+    color: black;
+    text-decoration: none;
+    margin: 200px 100px;
+    font-size: 40px;
+    font-family: Georgia, Garamond;
+}
+
+a.detail {
+    color: dimgray;
+    margin: 200px 100px;
+    text-decoration: none;
+    font-size: 18px;
+    font-style: italic;
+    font-family: Georgia, Garamond;
+    white-space: normal;
+    width: 200px;
+}
+
+p.info {
+    font-style: italic;
+    font-family: Garamond;
+    color: darkgray;
+    font-size: 22px;
+    margin-left: 100px;
+}
