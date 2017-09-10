@@ -6,6 +6,7 @@ h1 {
     margin: 0 auto;
     font-weight: bold;
     text-decoration: underline;
+    letter-spacing: 0.2em;
 }
 
 h2 {
@@ -14,6 +15,7 @@ h2 {
     font-family: "Century Gothic";
     font-weight: normal;
     text-decoration: underline;
+    letter-spacing: 0.2em;
 }
 
 p.comment {
@@ -30,4 +32,12 @@ p,
 ol,
 ul {
     font-family: Georgia, Garamond;
+}
+
+body {
+    background-image: url('https://courses.cs.washington.edu/courses/cse190m/09sp/homework/1/silverware.jpg');
+}
+
+ul {
+    list-style-image: url('https://courses.cs.washington.edu/courses/cse190m/09sp/homework/1/pie_icon.gif');
 }
