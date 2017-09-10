@@ -38,9 +38,9 @@
 
 - [x] 背景：添加一个铺满页面且不随页面滚动而移动的背景图片。https://courses.cs.washington.edu/courses/cse190m/09sp/homework/1/silverware.jpg
 
-- [ ] 更改列表前方的点为图片。
+- [X] 更改列表前方的点为图片。
 
-- [ ] 更改网页标题前的图片。
+- [X] 更改网页标题前的图片。
 
 - [x] 更宽的标题。 所有标题的字间距为0.2em。
 
