@@ -16,3 +16,66 @@
         background-image: url(http://my.ss.sysu.edu.cn/wiki/download/attachments/7045968/bannerbackground.png?version=1&modificationDate=1268896312000);
         background-repeat: repeat-x;
     }
+
+    div.comments {
+        border-width: 4px;
+        border-color: grey;
+        border-style: solid;
+        width: 800px;
+        margin: auto;
+    }
+
+    div.poster-and-cast {
+        float: right;
+        width: 250px;
+        background-color: #A2B964;
+    }
+
+    dt {
+        font-weight: bold;
+        margin-top: 1em;
+        margin-left: 1em;
+    }
+
+    dd {
+        margin-right: 1em;
+    }
+
+    p.page {
+        text-align: center;
+        background-color: #A2B964;
+    }
+
+    div.score {
+        background-image: url(http://my.ss.sysu.edu.cn/wiki/download/attachments/7045968/rottenbackground.png?version=1&modificationDate=1268896385000);
+        background-repeat: repeat-x;
+    }
+
+    span.percentage-and-review-count {
+        position: relative;
+        bottom: 20px;
+    }
+
+    span.percentage {
+        font-size: 58px;
+        color: red;
+        font-weight: bold;
+    }
+
+    span.review-count {
+        color: white;
+    }
+
+    p.comment {
+        border-color: gray;
+        border-width: 2px;
+        border-style: solid;
+        background-color: #E1D697;
+        margin: 8px;
+        width: 250px;
+        font-weight: bold;
+    }
+
+    span.w3c {
+        float: right;
+    }
