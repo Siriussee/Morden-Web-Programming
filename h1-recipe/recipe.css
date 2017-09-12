@@ -18,9 +18,17 @@ h2 {
     letter-spacing: 0.2em;
 }
 
+
+/*
 p.comment {
     background-color: #FFFFC8;
     margin-left: 50px;
+    font-style: italic;
+}
+*/
+
+blockquote.comment {
+    background-color: #FFFFC8;
     font-style: italic;
 }
 
