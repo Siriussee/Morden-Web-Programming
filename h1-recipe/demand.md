@@ -36,7 +36,7 @@
 
 至少选择两项完成。
 
-- [x] 背景：添加一个铺满页面且不随页面滚动而移动的背景图片。https://courses.cs.washington.edu/courses/cse190m/09sp/homework/1/silverware.jpg
+- [x] 背景：添加一个铺满页面且**不随页面滚动**而移动的背景图片。https://courses.cs.washington.edu/courses/cse190m/09sp/homework/1/silverware.jpg
 
 - [X] 更改列表前方的点为图片。
 
@@ -47,3 +47,29 @@
 - [x] 去除图片链接外的边框。
 
 - [x] 随意。
+
+## 注意事项 
+
+- meta标签的写法有毒 `<meta http-equiv="Content-type" content="text/html; charset=UTF-8">`
+
+- 开头不要忘记加 `<!DOCTYPE html>`
+
+- 列表嵌套时，列表的结束标记符位置会影响测试，但不会影响网页外观
+
+```html
+<!--correct-->
+<li>Tea
+    <ul>
+      <li>Black tea</li>
+      <li>Green tea</li>
+    </ul>
+  </li>
+<!--wrong-->
+<li>Tea</li>
+    <ul>
+      <li>Black tea</li>
+      <li>Green tea</li>
+    </ul>
+```
+
+- 不要使用 `<b> <i>` ，使用 `<em> <strong>` 替代他们

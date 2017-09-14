@@ -3,7 +3,7 @@ h1 {
     background-color: #F0F0F0;
     font-family: "Century Gothic", Futura, Verdana, sans-serif;
     text-align: center;
-    margin: 20 auto;
+    margin: 20px auto;
     font-weight: bold;
     text-decoration: underline;
     letter-spacing: 0.2em;
@@ -18,19 +18,10 @@ h2 {
     letter-spacing: 0.2em;
 }
 
-
-/*
-p.comment {
-    background-color: #FFFFC8;
-    margin-left: 50px;
-    font-style: italic;
-}
-*/
-
 blockquote.comment {
     background-color: #FFFFC8;
     font-style: italic;
-     font-family: Georgia, Garamond, serif;
+    font-family: Georgia, Garamond, serif;
 }
 
 a {
