@@ -1,104 +1,128 @@
-    body {
-        font-size: 8pt;
-        font-style: Verdana, Tahoma, sans-serif;
-        padding: 0px;
-        margin: 0px;
-        background-image: url('http://my.ss.sysu.edu.cn/wiki/download/attachments/7045968/background.png?version=1&modificationDate=1268896312000');
-    }
+body {
+    font-size: 8pt;
+    font-style: Verdana, Tahoma, sans-serif;
+    padding: 0px;
+    margin: 0px;
+    /*space under img, can also fixed by vertical-aglin*/
+    background-image: url('http://my.ss.sysu.edu.cn/wiki/download/attachments/7045968/background.png?version=1&modificationDate=1268896312000');
+}
 
-    h1 {
-        font-size: 24pt;
-        font-weight: bold;
-        text-align: center;
-        font-style: Tahoma, Verdana, sans-serif;
-    }
+h1 {
+    font-size: 24pt;
+    font-weight: bold;
+    text-align: center;
+    font-style: Tahoma, Verdana, sans-serif;
+}
 
-    div.banner {
-        position: top;
-        background-image: url(http://my.ss.sysu.edu.cn/wiki/download/attachments/7045968/bannerbackground.png?version=1&modificationDate=1268896312000);
-        background-repeat: repeat-x;
-    }
+div.banner {
+    position: top;
+    background-image: url(http://my.ss.sysu.edu.cn/wiki/download/attachments/7045968/bannerbackground.png?version=1&modificationDate=1268896312000);
+    background-repeat: repeat-x;
+}
 
-    div.comments {
-        border-width: 4px;
-        border-color: grey;
-        border-style: solid;
-        width: 800px;
-        min-height: 951px;
-        margin: auto;
-    }
+div.comments {
+    border-width: 4px;
+    border-color: grey;
+    border-style: solid;
+    width: 800px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+}
 
-    div.poster-and-cast {
-        float: right;
-        width: 250px;
-        background-color: #A2B964;
-    }
+div.poster-and-cast {
+    float: right;
+    width: 250px;
+    background-color: #A2B964;
+    margin-bottom: 15px;
+}
 
-    dt {
-        font-weight: bold;
-        margin-top: 1em;
-        margin-left: 1em;
-    }
+dt {
+    font-weight: bold;
+    margin-top: 1em;
+    margin-left: 1em;
+}
 
-    dd {
-        margin-right: 1em;
-    }
+dd {
+    margin-right: 1em;
+}
 
-    div.page {
-        position: absolute;
-        bottom: 0%;
-        text-align: center;
-        background-color: #A2B964;
-        width: 800px;
-        padding-bottom: 0px;
-        margin-top: 0px;
-        margin-bottom: 0px;
-    }
+p.page {
+    position: absolute;
+    font-size: 10px;
+    bottom: 0%;
+    text-align: center;
+    vertical-align: center;
+    background-color: #A2B964;
+    width: 800px;
+    padding: 5px;
+    
+    margin-bottom: 0px;
+}
 
-    div.score {
-        background-image: url(http://my.ss.sysu.edu.cn/wiki/download/attachments/7045968/rottenbackground.png?version=1&modificationDate=1268896385000);
-        background-repeat: repeat-x;
-    }
+div.score {
+    background-image: url(http://my.ss.sysu.edu.cn/wiki/download/attachments/7045968/rottenbackground.png?version=1&modificationDate=1268896385000);
+    background-repeat: repeat-x;
+}
 
-    span.percentage-and-review-count {
-        position: relative;
-        bottom: 20px;
-    }
+span.percentage-and-review-count {
+    position: relative;
+    bottom: 20px;
+}
 
-    span.percentage {
-        font-size: 58px;
-        color: red;
-        font-weight: bold;
-    }
+span.percentage {
+    font-size: 58px;
+    color: red;
+    font-weight: bold;
+    font-family: Verdana, Tahoma, sans-serif;
+    vertical-align: center;
+}
 
-    span.review-count {
-        color: white;
-    }
+span.review-count {
+    color: white;
+    font-size: 8pt;
+}
 
-    p.comment-left,
-    p.comment-right {
-        border-color: gray;
-        border-width: 2px;
-        border-style: solid;
-        background-color: #E1D697;
-        width: 200px;
-        font-weight: bold;
-    }
+p.comment-left,
+p.comment-right {
+    border-color: gray;
+    border-width: 2px;
+    border-style: solid;
+    background-color: #E1D697;
+    font-weight: bold;
+    padding: 8px;
+    overflow: hidden;
+    /**/
+}
 
-    div.left,
-    div.right {
-        width: 200px;
-        float: left;
-    }
+p.comment-right {
+    margin-right: 11px;
+}
 
-    img.rotten {
-        float: left;
-    }
+.author-left,
+.author-right {
+    padding-bottom: 15px;
+    padding-top: 5px;
+}
 
-    span.w3c {
-        float: right;
-        position: fixed;
-        right: 0px;
-        bottom: 0px;
-        z-index: 20;
-    }
+div.left,
+div.right {
+    margin-left: 12px;
+    width: 258.5px;
+    float: left;
+}
+
+img.rotten {
+    float: left;
+    margin-right: 5px;
+}
+span.org{
+    font-style: italic;
+}
+span.w3c {
+    float: right;
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+    z-index: 20;
+}
