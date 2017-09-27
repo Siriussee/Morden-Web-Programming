@@ -1,7 +1,14 @@
+/*  *change log
+    *pass w3c css cheak
+    *add some alt = "" in index.html and pass w3c html check
+    *created by sirius see in 17-09-27 17:00
+*/
+
 body {
     padding: 0px;
     margin: 0px;
     font-weight: bold;
+    color: white;
 }
 
 #bottom-positioner {
@@ -20,10 +27,6 @@ body {
 
 ul {
     list-style: none;
-    /*
-    position: absolute;
-    bottom: 20%;
-    right: 50%;*/
     padding: 0px;
     margin: 0px;
 }
@@ -54,9 +57,51 @@ ul {
     height: 60px;
 }
 
+.user {
+    position: absolute;
+    right: 50%;
+    top: 10%;
+}
+
+.comment {
+    position: absolute;
+    top: 40%;
+    right: 60%;
+}
+
+.posted {
+    position: absolute;
+    top: 70%;
+    right: 70%;
+}
+
+.simple-text {
+    position: absolute;
+    left: 120%;
+}
+
+.big-text {
+    position: absolute;
+    left: 160%;
+    top: -60%;
+    font-size: 40px;
+}
+
+.text {
+    color: #079E6E;
+    position: absolute;
+    left: 120%;
+}
+
+.like {
+    position: absolute;
+    top: 70%;
+    right: 30%;
+}
+
 #control-ring-container li {
     opacity: 0;
-    background-color: gray;
+    background-color: #5C5C5C;
     background-repeat: no-repeat;
     background-position: 50%;
     border-radius: 50%;
@@ -68,7 +113,7 @@ ul {
     width: 10px;
     height: 10px;
     position: absolute;
-    right: 0%;
+    right: 100%;
     top: 0%;
 }
 
@@ -87,7 +132,7 @@ ul {
     width: 10px;
     height: 10px;
     position: absolute;
-    right: 0%;
+    right: 100%;
     top: 0%;
 }
 
@@ -96,8 +141,8 @@ ul {
     height: 50px;
     opacity: 1;
     position: absolute;
-    right: 500%;
-    top: -150%;
+    right: 450%;
+    top: -120%;
 }
 
 .setting {
@@ -106,7 +151,7 @@ ul {
     width: 10px;
     height: 10px;
     position: absolute;
-    right: 0%;
+    right: 100%;
     top: 0%;
 }
 
@@ -115,20 +160,21 @@ ul {
     height: 50px;
     opacity: 1;
     position: absolute;
-    right: 150%;
-    top: 200%;
+    right: 130%;
+    top: 180%;
 }
 
-.message{
+.message {
     background-image: url("assets/images/message.png");
     -webkit-transition: all 0.5s;
     width: 10px;
     height: 10px;
     position: absolute;
-    right: 0%;
+    right: 100%;
     top: 0%;
 }
-#button:hover .message{
+
+#button:hover .message {
     width: 50px;
     height: 50px;
     opacity: 1;
@@ -136,25 +182,26 @@ ul {
     top: 80%;
     right: 350%;
 }
-.unread{
+
+.unread {
     background-color: red;
     text-align: center;
     color: white;
-    width: 10px;
-    height: 10px;
+    width: 15px;
+    height: 15px;
     border-radius: 50%;
     opacity: 0;
+    position: absolute;
+    right: -10%;
     -webkit-transition: all 0.5s;
 }
 
-#button:hover .unread{
-    width: 20px;
-    height: 20px;
+#button:hover .unread {
+    width: 25px;
+    height: 25px;
     opacity: 1;
     position: absolute;
     right: -10%;
-
-    
 }
 
 .sign {
@@ -163,9 +210,10 @@ ul {
     width: 10px;
     height: 10px;
     position: absolute;
-    right: 0%;
+    right: 100%;
     top: 0%;
 }
+
 #button:hover .sign {
     width: 50px;
     height: 50px;
@@ -174,6 +222,7 @@ ul {
     right: -80%;
     top: 120%;
 }
+
 div.apb {
     -webkit-transition: all 0.5s;
     width: 30px;

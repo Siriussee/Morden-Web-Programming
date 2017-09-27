@@ -1,3 +1,20 @@
+/*  *I am very appriciate those who offer advice, and thanks for reviewing my code
+    *but I was upset after seeing someone leave a strong word about my work
+    *my code may be bad, but I am coding it with all my heart
+    *so stop attacking my attitude towards this course and this homework
+    *I will try harder to meet teacher's need
+    *And I hope someone can show a little mercy to his classmate
+    *           —— Sirius After reading some comment
+*/
+
+/* bug fix log
+    * change screenshot way to make webpage seems shorter
+    * slightly move "32% and 88comments" to make it looks like excepted one
+    * try to use font-stretch to narrow font in right side bar but failed
+    * center banner
+
+*/
+
 body {
     font-size: 8pt;
     font-family: Verdana, Tahoma;
@@ -15,7 +32,7 @@ h1 {
 }
 
 div.banner {
-    
+    text-align: center;
     background-image: url(http://my.ss.sysu.edu.cn/wiki/download/attachments/7045968/bannerbackground.png?version=1&modificationDate=1268896312000);
     background-repeat: repeat-x;
 }
@@ -35,6 +52,9 @@ div.poster-and-cast {
     width: 250px;
     background-color: #A2B964;
     margin-bottom: 15px;
+    /* useless tag*/
+    font-stretch: semi-condensed;
+    /* useless tag*/
 }
 
 dt {
@@ -67,20 +87,22 @@ div.score {
 
 span.percentage-and-review-count {
     position: relative;
-    bottom: 20px;
+    bottom: 3px;
 }
 
 span.percentage {
-    font-size: 58px;
-    color: red;
-    font-weight: bold;
-    font-family: Verdana, Tahoma, sans-serif;
-    vertical-align: center;
+    font-size: 48pt;
+	font-weight: bold;
+	color: red;
+	vertical-align: bottom;
+	font-family: Verdana, Tahoma, sans-serif;
 }
 
 span.review-count {
-    color: white;
     font-size: 8pt;
+    color: white;
+    vertical-align: 60%;
+	
 }
 
 p.comment-left,
@@ -101,7 +123,7 @@ p.comment-right {
 
 .author-left,
 .author-right {
-    padding-bottom: 15px;
+    padding-bottom: 30px;
     padding-top: 5px;
 }
 
