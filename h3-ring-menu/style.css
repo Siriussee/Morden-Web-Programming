@@ -1,6 +1,7 @@
 body {
     padding: 0px;
     margin: 0px;
+    font-weight: bold;
 }
 
 #bottom-positioner {
@@ -19,9 +20,10 @@ body {
 
 ul {
     list-style: none;
+    /*
     position: absolute;
     bottom: 20%;
-    right: 50%;
+    right: 50%;*/
     padding: 0px;
     margin: 0px;
 }
@@ -75,8 +77,8 @@ ul {
     height: 50px;
     opacity: 1;
     position: absolute;
-    right: 1200%;
-    top: -600%;
+    right: 400%;
+    top: -350%;
 }
 
 .history {
@@ -94,8 +96,8 @@ ul {
     height: 50px;
     opacity: 1;
     position: absolute;
-    right: 1450%;
-    top: -320%;
+    right: 500%;
+    top: -150%;
 }
 
 .setting {
@@ -113,10 +115,65 @@ ul {
     height: 50px;
     opacity: 1;
     position: absolute;
-    right: 500%;
+    right: 150%;
     top: 200%;
 }
 
+.message{
+    background-image: url("assets/images/message.png");
+    -webkit-transition: all 0.5s;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    right: 0%;
+    top: 0%;
+}
+#button:hover .message{
+    width: 50px;
+    height: 50px;
+    opacity: 1;
+    position: absolute;
+    top: 80%;
+    right: 350%;
+}
+.unread{
+    background-color: red;
+    text-align: center;
+    color: white;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    opacity: 0;
+    -webkit-transition: all 0.5s;
+}
+
+#button:hover .unread{
+    width: 20px;
+    height: 20px;
+    opacity: 1;
+    position: absolute;
+    right: -10%;
+
+    
+}
+
+.sign {
+    background-image: url("assets/images/signin.png");
+    -webkit-transition: all 0.5s;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    right: 0%;
+    top: 0%;
+}
+#button:hover .sign {
+    width: 50px;
+    height: 50px;
+    opacity: 1;
+    position: absolute;
+    right: -80%;
+    top: 120%;
+}
 div.apb {
     -webkit-transition: all 0.5s;
     width: 30px;
