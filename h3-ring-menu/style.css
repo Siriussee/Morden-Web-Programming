@@ -4,6 +4,24 @@
     *created by sirius see in 17-09-27 17:00
 */
 
+
+/*  *change log
+    *move apb to make it spread from center instead of corner
+    *minor position adjustment
+    *created by sirius see in 17-09-28 23:00
+*/
+
+/*  *change log to meet the need of SiskonEmilia
+    *adjust the size of img in info-bar & the size of control bar
+    *img in control-bar will disappear when not hovering
+    *created by sirius see in 17-09-29 15:00
+*/
+
+/*  *todo list
+    *change icon strink point ot make animation look better
+    *reduce sparking when mouse moving between icons
+    */
+
 body {
     padding: 0px;
     margin: 0px;
@@ -25,6 +43,8 @@ body {
     right: 50%;
 }
 
+#button:hover {}
+
 ul {
     list-style: none;
     padding: 0px;
@@ -37,10 +57,10 @@ ul {
     opacity: 0;
     width: 60px;
     height: 60px;
-    -webkit-transition: all 0.5s;
+    -webkit-transition: all 0.5s ease-in-out;
     position: absolute;
     bottom: 80%;
-    right: 0%;
+    right: 60%;
 }
 
 #button:hover #info-bar {
@@ -49,7 +69,7 @@ ul {
     height: 150px;
     position: absolute;
     bottom: 400%;
-    right: -50%;
+    right: -80%;
 }
 
 .info {
@@ -65,14 +85,14 @@ ul {
 
 .comment {
     position: absolute;
-    top: 40%;
-    right: 60%;
+    top: 31%;
+    right: 58%;
 }
 
 .posted {
     position: absolute;
-    top: 70%;
-    right: 70%;
+    top: 66%;
+    right: 64%;
 }
 
 .simple-text {
@@ -82,21 +102,27 @@ ul {
 
 .big-text {
     position: absolute;
-    left: 160%;
-    top: -60%;
+    left: 128%;
+    top: -11%;
     font-size: 40px;
 }
 
-.text {
+.text-post {
     color: #079E6E;
     position: absolute;
-    left: 120%;
+    left: 116%;
+    top: 11%;
 }
-
+.text-like {
+    color: #079E6E;
+    position: absolute;
+    left: 119%;
+    top: 13%;
+}
 .like {
     position: absolute;
-    top: 70%;
-    right: 30%;
+    top: 66%;
+    right: 27%;
 }
 
 #control-ring-container li {
@@ -108,8 +134,7 @@ ul {
 }
 
 .mask {
-    background-image: url("assets/images/mask.png");
-    -webkit-transition: all 0.5s;
+    -webkit-transition: all 0.5s ease-in-out;
     width: 10px;
     height: 10px;
     position: absolute;
@@ -118,8 +143,9 @@ ul {
 }
 
 #button:hover .mask {
-    width: 50px;
-    height: 50px;
+    background-image: url("assets/images/mask.png");
+    width: 45px;
+    height: 45px;
     opacity: 1;
     position: absolute;
     right: 400%;
@@ -127,8 +153,7 @@ ul {
 }
 
 .history {
-    background-image: url("assets/images/history.png");
-    -webkit-transition: all 0.5s;
+    -webkit-transition: all 0.5s ease-in-out;
     width: 10px;
     height: 10px;
     position: absolute;
@@ -137,8 +162,9 @@ ul {
 }
 
 #button:hover .history {
-    width: 50px;
-    height: 50px;
+    background-image: url("assets/images/history.png");
+    width: 45px;
+    height: 45px;
     opacity: 1;
     position: absolute;
     right: 450%;
@@ -146,8 +172,7 @@ ul {
 }
 
 .setting {
-    background-image: url("assets/images/setting.png");
-    -webkit-transition: all 0.5s;
+    -webkit-transition: all 0.5s ease-in-out;
     width: 10px;
     height: 10px;
     position: absolute;
@@ -156,8 +181,9 @@ ul {
 }
 
 #button:hover .setting {
-    width: 50px;
-    height: 50px;
+    background-image: url("assets/images/setting.png");
+    width: 45px;
+    height: 45px;
     opacity: 1;
     position: absolute;
     right: 130%;
@@ -165,8 +191,7 @@ ul {
 }
 
 .message {
-    background-image: url("assets/images/message.png");
-    -webkit-transition: all 0.5s;
+    -webkit-transition: all 0.5s ease-in-out;
     width: 10px;
     height: 10px;
     position: absolute;
@@ -175,8 +200,9 @@ ul {
 }
 
 #button:hover .message {
-    width: 50px;
-    height: 50px;
+    background-image: url("assets/images/message.png");
+    width: 45px;
+    height: 45px;
     opacity: 1;
     position: absolute;
     top: 80%;
@@ -184,29 +210,27 @@ ul {
 }
 
 .unread {
-    background-color: red;
-    text-align: center;
     color: white;
-    width: 15px;
-    height: 15px;
+    background-color: red;
     border-radius: 50%;
-    opacity: 0;
+    text-align: center;
+    width: 25px;
+    height: 25px;
     position: absolute;
     right: -10%;
-    -webkit-transition: all 0.5s;
+    top: -18%;
+    opacity: 0;
+    display: none;
+    -webkit-transition: opacity 0.5s ease-in-out;
 }
 
 #button:hover .unread {
-    width: 25px;
-    height: 25px;
+    display: block;
     opacity: 1;
-    position: absolute;
-    right: -10%;
 }
 
 .sign {
-    background-image: url("assets/images/signin.png");
-    -webkit-transition: all 0.5s;
+    -webkit-transition: all 0.5s ease-in-out;
     width: 10px;
     height: 10px;
     position: absolute;
@@ -215,8 +239,9 @@ ul {
 }
 
 #button:hover .sign {
-    width: 50px;
-    height: 50px;
+    background-image: url("assets/images/signin.png");
+    width: 45px;
+    height: 45px;
     opacity: 1;
     position: absolute;
     right: -80%;
@@ -224,7 +249,8 @@ ul {
 }
 
 div.apb {
-    -webkit-transition: all 0.5s;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition-delay: 0.3s;
     width: 30px;
     height: 30px;
     background-color: #97A1DD;
@@ -233,8 +259,8 @@ div.apb {
     background-position: 50%;
     border-radius: 50%;
     position: absolute;
-    bottom: 20%;
-    right: 50%;
+    bottom: 80%;
+    right: 120%;
 }
 
 div.icon {
@@ -248,8 +274,23 @@ div.icon {
     background-repeat: no-repeat;
     background-position: 50%;
     background-color: rgba(48, 63, 159, 1);
-    -webkit-transition: all 0.5s;
+    -webkit-transition: all 0.5s ease-in-out;
     position: absolute;
     bottom: 20%;
-    right: 50%;
+    right: 30%;
+}
+
+img.comments {
+    height: 40px;
+    width: auto;
+}
+
+img.posts {
+    height: 30px;
+    width: auto;
+}
+
+img.likes {
+    height: 30px;
+    width: auto;
 }
