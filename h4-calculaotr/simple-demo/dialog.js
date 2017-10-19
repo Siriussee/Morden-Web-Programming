@@ -1,0 +1,3 @@
+function openDialog() {
+    alert("helloWorld");
+}
