@@ -17,3 +17,4 @@
 - 打开html之后onclick自动执行然后失效是为什么？
     - 我之前遇到这个问题是改成onclick=fun；
 - getElementsByClassName(correct) getElementByClassName(false)
+- 3.021会处理为17（八进制）
