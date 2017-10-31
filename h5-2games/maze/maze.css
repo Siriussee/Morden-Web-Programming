@@ -1,0 +1,98 @@
+body{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family:"Microsoft Yahei";
+    width: 600px;
+    margin: auto; /*center*/
+    overflow: hidden;
+}
+#info{
+    height: 50px;
+}
+#maze{
+    width: 100%;
+    height: 360px;
+    
+    position: relative;
+}
+
+.wall{
+    background-color: rgb(230, 230, 230);
+}
+.top{
+    width:596px;
+    height: 60px;
+    z-index: -1;
+    top:0px;
+    border: 2px solid black;
+}
+.left{
+    width: 150px;
+    height: 170px;
+    position: absolute;
+    top:62px;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+}
+.right{
+    width: 150px;
+    height: 170px;
+    position: absolute;
+    top:62px;
+    right:0px;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+}
+.mid{
+    width: 120px;
+    height: 170px;
+    position: absolute;
+    left:240px;
+    bottom: 62px;
+    z-index: 1;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    border-top: 2px solid black;
+}
+.bottom{
+    width:596px;
+    height: 60px;
+    position: absolute;
+    bottom: 0%;
+    border: 2px solid black;
+}
+#start{
+    background-color: lightgreen;
+    width: 50px;
+    height: 50px;
+    border: 2px solid black;
+    position: absolute;
+    top:238px;
+    left:0px;
+}
+#end{
+    background-color:rgb(138, 127, 254);
+    width: 50px;
+    height: 50px;
+    border: 2px solid black;
+    position: absolute;
+    top:238px;
+    right:0px;
+}
+.mark{
+    position: relative;
+    font-size: 38px;
+}
+#example{
+    width:100px;
+    height: 30px;
+    background-color: rgb(230, 230, 230);
+    margin: auto;
+    border: 2px solid black;
+}
+p{
+    text-align: left;
+}

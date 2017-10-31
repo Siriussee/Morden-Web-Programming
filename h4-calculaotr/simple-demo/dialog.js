@@ -1,3 +1,2 @@
 function openDialog() {
     alert("helloWorld");
-}
