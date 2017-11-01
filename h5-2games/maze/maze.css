@@ -19,7 +19,13 @@ body{
 
 .wall{
     background-color: rgb(230, 230, 230);
+    -webkit-transition: 0.5s;
 }
+
+#error:hover{
+    background-color: red;
+}
+
 .top{
     width:596px;
     height: 60px;
@@ -63,6 +69,15 @@ body{
     position: absolute;
     bottom: 0%;
     border: 2px solid black;
+}
+#check{
+    background-color: lightgreen;
+    width: 12px;
+    height: 65px;
+    position: absolute;
+    top: 233px;
+    right: 54px;
+    z-index: -1;
 }
 #start{
     background-color: lightgreen;
