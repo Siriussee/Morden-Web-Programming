@@ -1,0 +1,65 @@
+body {
+    text-align: center;
+    width: 800px;
+    margin: auto;
+    font-family: "Century Gothic", Futura, Verdana, sans-serif;
+    overflow: hidden;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: normal;
+}
+
+h3,
+ol {
+    text-align: left;
+}
+
+#control-bar-positioner {
+    width: 500px;
+    height: 80px;
+    margin: auto;
+}
+
+#line1,
+#line2 {
+    height: 40px;
+    width: 500px;
+    position: relative;
+}
+
+#start,
+#station {
+    float: left;
+}
+
+#times,
+#scores {
+    float: right;
+    margin: 0px;
+}
+
+#time,#score {
+    position: absolute;
+    right: -75px;
+    width: 60px;
+}
+
+#mole-positioner {
+    width: 300px;
+    margin: auto;
+}
+
+#mole {
+    margin-top: 20px;
+    height: 180px;
+    margin-bottom: 20px;
+}
+
+.moles {
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+    float: left;
+}

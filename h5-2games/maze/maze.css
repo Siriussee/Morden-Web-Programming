@@ -2,13 +2,15 @@ body{
     margin: 0;
     padding: 0;
     text-align: center;
-    font-family:"Microsoft Yahei";
+    font-family: "Century Gothic", Futura, Verdana, sans-serif;
     width: 600px;
     margin: auto; /*center*/
     overflow: hidden;
 }
 #info{
-    height: 50px;
+    height: 100px;
+    font-size: 30px;
+    -webkit-transition: 0.5s;
 }
 #maze{
     width: 100%;
@@ -22,37 +24,38 @@ body{
     -webkit-transition: 0.5s;
 }
 
-#error:hover{
+.error{
     background-color: red;
+    -webkit-transition: 0.5s;
 }
 
-.top{
+#wall-top{
     width:596px;
     height: 60px;
     z-index: -1;
     top:0px;
     border: 2px solid black;
 }
-.left{
+#wall-left{
     width: 150px;
     height: 170px;
     position: absolute;
-    top:62px;
+    top:61px;
     border-left: 2px solid black;
     border-right: 2px solid black;
     border-bottom: 2px solid black;
 }
-.right{
+#wall-right{
     width: 150px;
     height: 170px;
     position: absolute;
-    top:62px;
+    top:61px;
     right:0px;
     border-left: 2px solid black;
     border-right: 2px solid black;
     border-bottom: 2px solid black;
 }
-.mid{
+#wall-mid{
     width: 120px;
     height: 170px;
     position: absolute;
@@ -63,22 +66,24 @@ body{
     border-right: 2px solid black;
     border-top: 2px solid black;
 }
-.bottom{
+#wall-bottom{
     width:596px;
     height: 60px;
     position: absolute;
     bottom: 0%;
     border: 2px solid black;
 }
+
 #check{
-    background-color: lightgreen;
-    width: 12px;
-    height: 65px;
+    /*background-color: lightgreen;*/
+    width: 82px;
+    height: 185px;
     position: absolute;
-    top: 233px;
-    right: 54px;
+    top: 168.2px;
+    left: -82px;
     z-index: -1;
 }
+
 #start{
     background-color: lightgreen;
     width: 50px;
