@@ -43,13 +43,14 @@ h1 {
 .pic {
     width: 129px;
     height: 129px;
-    background-image: url("img.png");
+    background-image: url("img.jpg");
     background-size: 500px 500px;
     border-width: 1px;
     border-style: solid;
     border-color: rgb(63, 134, 245);
     position: absolute;
     transition: 0.1s linear;
+    cursor: pointer;
 }
 
 .blank {
