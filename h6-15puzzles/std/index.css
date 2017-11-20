@@ -1,0 +1,47 @@
+#container {
+    width: 960px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  #puzzle-pane {
+    position: relative;
+    width: 352px;
+    height: 352px;
+    margin: 0 auto;
+    /*background: darkgrey;*/
+  }
+  
+  #puzzle-pane div {
+    display: inline-block;
+    box-sizing: border-box;
+    position: absolute;
+    border: 1px solid #B7B7B7;
+    width: 88px;
+    height: 88px;
+    background-image: url('panda.jpg'); 
+    transition: all 0.2s;
+  }
+  
+  
+  button {
+    margin-top: 20px;
+    font-size: 20px;
+    padding: 8px 20px;
+    border: none;
+    background-color: #4285F4;
+    color: white;
+    box-shadow: 4px 4px 5px rgb(136, 136, 136);
+    transition: all 0.2s;
+  }
+  
+  button:hover {
+    transform: scale(1.2, 1.2);
+    cursor: pointer;
+  }
+  
+  button:hover, #puzzle-pane div:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+  
