@@ -62,27 +62,60 @@ function upload(response, postData) {
 }
 
 function isValid(params) {
-	if (!(/[a-zA-Z][a-zA-Z0-9_\-]{5,17}/.test(params[0][1]))) return "非法用户名。用户名由6~18位英文字母、数字或下划线组成，且必须以英文字母开头。";
-	if (params[1][1] > 99999999 || params[1][1] < 10000000) return "非法学号。学号由8位数字组成，且开头不能为0。";
-	if (!(/[1-9][0-9]{10}/.test(params[2][1]))) return "非法电话号码。电话号码由11位数字组成，且开头不能为0。";
-	if (!(/^[a-zA-Z0-9_\-]+@([a-zA-Z0-9_\-]+\.)+[a-zA-Z]{2,4}$/.test(params[3][1]))) return "非法邮箱地址。";
-	return "pass";
+	var massege = "";
+	var flag = false;
+	if (!(/[a-zA-Z][a-zA-Z0-9_\-]{5,17}/.test(params[0][1]))) {
+		flag = true;
+		massege += "非法用户名。用户名由6~18位英文字母、数字或下划线组成，且必须以英文字母开头。";
+	}
+	if (params[1][1] > 99999999 || params[1][1] < 10000000) {
+		flag = true;
+		massege += "非法学号。学号由8位数字组成，且开头不能为0。";
+	}
+	if (!(/[1-9][0-9]{10}/.test(params[2][1]))) {
+		flag = true;
+		massege += "非法电话号码。电话号码由11位数字组成，且开头不能为0。";
+	}
+	if (!(/^[a-zA-Z0-9_\-]+@([a-zA-Z0-9_\-]+\.)+[a-zA-Z]{2,4}$/.test(params[3][1]))) {
+		flag = true;
+		massege += "非法邮箱地址。";
+	}
+	if (flag == false)
+		return "pass";
+	return massege;
 }
 
 function isUsed(info) {
+	var massege = "";
+	var flag = false;
 	var allData = fs.readFileSync("./h8-http-server/demo/data.txt");
 	if (allData.toString() == "") return "pass";
 	var data = allData.toString().split("\n");
 	for (var i = 0; i < data.length; ++i) {
+		if (data[i] == "") break;
 		var thisData = data[i].split("&");
-		if (info[0][1] == thisData[0].split("=")[1]) return "用户名已被占用";
-		if (info[1][1] == thisData[1].split("=")[1]) return "学号已被占用";
-		if (info[2][1] == thisData[2].split("=")[1]) return "电话号码已被占用";
-		if (info[3][1] == thisData[3].split("=")[1]) return "电子邮箱已被占用";
+		if (info[0][1] == thisData[0].split("=")[1]) {
+			flag = true;
+			massege += "用户名已被占用。";
+		}
+		if (info[1][1] == thisData[1].split("=")[1]) {
+			flag = true;
+			massege += "学号已被占用。";
+		}
+		if (info[2][1] == thisData[2].split("=")[1]) {
+			flag = true;
+			massege += "电话号码已被占用。";
+		}
+		if (info[3][1] == thisData[3].split("=")[1]) {
+			flag = true;
+			massege += "电子邮箱已被占用。";
+		}
 	}
-	return "pass";
-	
-	/* !!!! fuck all async methods burning my time !!!!
+	if (flag == false)
+		return "pass";
+	return massege;
+
+	/* !!!! fuck all async methods wasting my time !!!!
 	fs.readFile("./h8-http-server/demo/data.txt", function (err, allData) {
 		if (err) 
 			console.log("err in used");
@@ -101,5 +134,61 @@ function isUsed(info) {
 	*/
 }
 
+function search(response, target) {
+	console.log("Request handler 'search' was called.");
+	var flag = false;
+	var name = target.split("=")[1];
+	var allData = fs.readFileSync("./h8-http-server/demo/data.txt");
+	if (allData.toString() == "") return start(response, "");
+	var data = allData.toString().split("\n");
+	for (var i = 0; i < data.length; ++i) {
+		var thisData = data[i].split("&");
+		if (name == thisData[0].split("=")[1]) {
+			flag = true;
+			//show it
+			response.writeHead(200, {
+				"Content-Type": "text/html"
+			});
+			response.write("<!DOCTYPE html><html><head><meta http-equiv=\"Content-type\" " +
+				"content=\"text/html; charset=UTF-8\"><title>Sign Up</title>" +
+				"</head><body style=\"width: 300px;margin: auto;margin-top:100px\">");
+			response.write("姓名: " + thisData[0].split("=")[1] + "<br>" +
+				"学号: " + thisData[1].split("=")[1] + "<br>" +
+				"电话: " + thisData[2].split("=")[1] + "<br>" +
+				"邮箱: " + thisData[3].split("=")[1] + "<br>");
+			response.write("</body>");
+			response.end();
+			break;
+		}
+	}
+	if (flag == false)
+		return start(response, "");
+}
+
+function clear(response) {
+	console.log("Request handler 'clear' was called.");
+	fs.writeFileSync("./h8-http-server/demo/data.txt", "");
+
+	response.writeHead(200, {
+		"Content-Type": "text/html"
+	});
+	response.write("<!DOCTYPE html><html><head><meta http-equiv=\"Content-type\" " +
+		"content=\"text/html; charset=UTF-8\">")
+	response.write("<body>");
+
+	response.write("数据已清除。")
+
+	response.write("</body>");
+	response.end();
+
+}
+/*
+function sleep(milliSeconds) {
+	var startTime = new Date().getTime();
+	while (new Date().getTime() < startTime + milliSeconds);
+}
+*/
+exports.search = search;
 exports.start = start;
 exports.upload = upload;
+exports.clear = clear;

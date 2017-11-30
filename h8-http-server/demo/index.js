@@ -7,6 +7,7 @@ var handle = {};
 handle["/"] = requestHandlers.start;
 handle["/start"] = requestHandlers.start;
 handle["/upload"] = requestHandlers.upload;
+handle["/clear"] = requestHandlers.clear;
 handle["search"]= requestHandlers.search;
 
 //then pass our hander pairs to start()
