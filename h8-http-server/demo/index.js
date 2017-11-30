@@ -3,10 +3,11 @@ var router = require("./router");
 var requestHandlers = require("./requestHandlers");
 
 //a key-value pairs, to handle different url request
-var handle = {}
+var handle = {};
 handle["/"] = requestHandlers.start;
 handle["/start"] = requestHandlers.start;
 handle["/upload"] = requestHandlers.upload;
+handle["search"]= requestHandlers.search;
 
 //then pass our hander pairs to start()
 server.start(router.route, handle);
