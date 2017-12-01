@@ -1,9 +1,9 @@
 var fs = require("fs");
 var queryString = require('querystring');
-
+//load index.html
 function start(response, postData) {
 	console.log("Request handler 'start' was called.");
-	fs.readFile("./h8-http-server/demo/index.html", function (err, body) {
+	fs.readFile("./index.html", function (err, body) {
 		if (err) throw err;
 		response.writeHead(200, {
 			"Content-Type": "text/html"
@@ -12,7 +12,19 @@ function start(response, postData) {
 		response.end();
 	});
 }
-
+//load index.css
+function style(response) {
+	console.log("Request handler 'style' was called.");
+	fs.readFile("./index.css", function (err, body) {
+		if (err) throw err;
+		response.writeHead(200, {
+			"Content-Type": "text/css"
+		});
+		response.write(body);
+		response.end();
+	});
+}
+//upload post to server
 function upload(response, postData) {
 	console.log("Request handler 'upload' was called.");
 	response.writeHead(200, {
@@ -38,29 +50,27 @@ function upload(response, postData) {
 		response.writeHead(200, {
 			"Content-Type": "text/html"
 		});
-		response.write("<!DOCTYPE html><html><head><meta http-equiv=\"Content-type\" " +
-			"content=\"text/html; charset=UTF-8\"><title>Sign Up</title>" +
-			"</head><body style=\"width: 300px;margin: auto;margin-top:100px\">");
-		response.write("姓名: " + info[0][1] + "<br>" +
-			"学号: " + info[1][1] + "<br>" +
-			"电话: " + info[2][1] + "<br>" +
-			"邮箱: " + info[3][1] + "<br>");
-		response.write("</body>");
+		response.write(headHTML);
+		response.write("<p class=\"blank\">" + info[0][1] + "</p>" +
+			"<p class=\"blank\">" + info[1][1] + "</p>" +
+			"<p class=\"blank\">" + info[2][1] + "</p>" +
+			"<p class=\"blank\">" + info[3][1] + "</p>");
+		response.write("<form action=\"/start\" method=\"post\"><input class=\"buttom\" type=\"submit\" value=\"返回\" /></form>");
+		response.write(tailHTML);
 		response.end();
 
 	} else {
 		response.writeHead(200, {
 			"Content-Type": "text/html"
 		});
-		response.write("<!DOCTYPE html><html><head><meta http-equiv=\"Content-type\" " +
-			"content=\"text/html; charset=UTF-8\">")
-		response.write("<body>");
-		response.write("合法性检测: " + isValid(info) + "<br>" + "重复检测: " + isUsed(info));
-		response.write("</body>");
+		response.write(headHTML);
+		response.write("合法性检测: " + isValid(info) + "<br>" + "重复性检测: " + isUsed(info));
+		response.write("<form action=\"/start\" method=\"post\"><input class=\"buttom\" type=\"submit\" value=\"返回\" /></form>");
+		response.write(tailHTML);
 		response.end();
 	}
 }
-
+//style check
 function isValid(params) {
 	var massege = "";
 	var flag = false;
@@ -84,11 +94,11 @@ function isValid(params) {
 		return "pass";
 	return massege;
 }
-
+//repeat check
 function isUsed(info) {
 	var massege = "";
 	var flag = false;
-	var allData = fs.readFileSync("./h8-http-server/demo/data.txt");
+	var allData = fs.readFileSync("./data.txt");
 	if (allData.toString() == "") return "pass";
 	var data = allData.toString().split("\n");
 	for (var i = 0; i < data.length; ++i) {
@@ -138,7 +148,7 @@ function search(response, target) {
 	console.log("Request handler 'search' was called.");
 	var flag = false;
 	var name = target.split("=")[1];
-	var allData = fs.readFileSync("./h8-http-server/demo/data.txt");
+	var allData = fs.readFileSync("./data.txt");
 	if (allData.toString() == "") return start(response, "");
 	var data = allData.toString().split("\n");
 	for (var i = 0; i < data.length; ++i) {
@@ -149,14 +159,13 @@ function search(response, target) {
 			response.writeHead(200, {
 				"Content-Type": "text/html"
 			});
-			response.write("<!DOCTYPE html><html><head><meta http-equiv=\"Content-type\" " +
-				"content=\"text/html; charset=UTF-8\"><title>Sign Up</title>" +
-				"</head><body style=\"width: 300px;margin: auto;margin-top:100px\">");
-			response.write("姓名: " + thisData[0].split("=")[1] + "<br>" +
-				"学号: " + thisData[1].split("=")[1] + "<br>" +
-				"电话: " + thisData[2].split("=")[1] + "<br>" +
-				"邮箱: " + thisData[3].split("=")[1] + "<br>");
-			response.write("</body>");
+			response.write(headHTML);
+			response.write("<p class=\"blank\">" + thisData[0].split("=")[1] + "</p>" +
+				"<p class=\"blank\">" + thisData[1].split("=")[1] + "</p>" +
+				"<p class=\"blank\">" + thisData[2].split("=")[1] + "</p>" +
+				"<p class=\"blank\">" + thisData[3].split("=")[1] + "</p>");
+			response.write("<form action=\"/start\" method=\"post\"><input class=\"buttom\" type=\"submit\" value=\"返回\" /></form>");
+			response.write(tailHTML);
 			response.end();
 			break;
 		}
@@ -167,18 +176,15 @@ function search(response, target) {
 
 function clear(response) {
 	console.log("Request handler 'clear' was called.");
-	fs.writeFileSync("./h8-http-server/demo/data.txt", "");
+	fs.writeFileSync("./data.txt", "");
 
 	response.writeHead(200, {
 		"Content-Type": "text/html"
 	});
-	response.write("<!DOCTYPE html><html><head><meta http-equiv=\"Content-type\" " +
-		"content=\"text/html; charset=UTF-8\">")
-	response.write("<body>");
-
+	response.write(headHTML);
 	response.write("数据已清除。")
-
-	response.write("</body>");
+	response.write("<form action=\"/start\" method=\"post\"><input class=\"buttom\" type=\"submit\" value=\"返回\" /></form>");
+	response.write(tailHTML);
 	response.end();
 
 }
@@ -192,3 +198,9 @@ exports.search = search;
 exports.start = start;
 exports.upload = upload;
 exports.clear = clear;
+exports.style = style;
+
+var headHTML = "<!DOCTYPE html><html><head><meta http-equiv=\"Content-type\" content=\"text/html; " +
+	"charset=UTF-8\"><link rel=\"stylesheet\" type=\"text/css\" href=\"index.css\"><title>Sign Up</title>" +
+	"</head><body>";
+var tailHTML = "</body>";

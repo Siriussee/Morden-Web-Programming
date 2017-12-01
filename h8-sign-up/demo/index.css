@@ -1,0 +1,40 @@
+body {
+    width: 382px;
+    margin: 100px auto;
+}
+
+.blank {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border: 1px solid grey;
+    padding: 20px 20px;
+    font-size: 16px;
+    line-height: 24px;
+    border-radius: 3px;
+    width: 340px;
+}
+
+.buttom {
+    width: 382px;
+    padding: 12px 24px;
+    margin-bottom: 0;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 24px;
+    text-align: center;
+    white-space: nowrap;
+    display: block;
+    margin-top: 15px;
+    color: #fff;
+    background-color: #1e88e5;
+    border-width: 0px;
+    border-radius: 3px;
+}
+
+.buttom:hover {
+    background-color: rgb(67, 153, 252);
+}
+
+.buttom:focus {
+    background-color: #1e88e5;
+}

@@ -8,6 +8,7 @@ handle["/"] = requestHandlers.start;
 handle["/start"] = requestHandlers.start;
 handle["/upload"] = requestHandlers.upload;
 handle["/clear"] = requestHandlers.clear;
+handle["/index.css"] = requestHandlers.style;
 handle["search"]= requestHandlers.search;
 
 //then pass our hander pairs to start()
