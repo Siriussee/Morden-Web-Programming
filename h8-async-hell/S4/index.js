@@ -28,7 +28,7 @@ function ramdonSwitch() {
 		order[ramdon] = temp;
 	}
 
-	for (var i = 0; i < order.length; ++i) {
+	for (var i = 0; i < 5; ++i) {
 		if (order[i] == 0)
 			charOrder[i] = 'A';
 		if (order[i] == 1)
@@ -55,8 +55,8 @@ function getDataAuto(i) {
 
 function getData() {
 	var target = this;
-
-	pressed.push(target); //add to pressed
+	if (target != window)
+		pressed.push(target); //add to pressed
 	$("li").unbind(); //inactivate all buttom
 	//if (ajaxReq != null) //prevent repeated call
 	//	ajaxReq.abort();
