@@ -7,13 +7,13 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}/h8-http-server\\demo\\index.js"
+            "program": "${workspaceFolder}"
         },
         {
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}/h8-http-server\\signin.js"
+            "program": "${workspaceFolder}"
         }
     ]
 }

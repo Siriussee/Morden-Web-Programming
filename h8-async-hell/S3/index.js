@@ -1,11 +1,16 @@
 var pressed = new Array();
 var ajaxReq; //get ramdonInt from server
+var counter = 0;
 
 $(document).ready(function () { //when loaded
 	$("#button").mouseenter(function () { //when mouse in element
 		$(".unread").hide(); //hide add unread bubble
 		$(".apb").click(function () {
-			getData.apply($("li")[pressed.length]);
+			getData.apply($("li")[0]);
+			getData.apply($("li")[1]);
+			getData.apply($("li")[2]);
+			getData.apply($("li")[3]);
+			getData.apply($("li")[4]);
 		});
 		//addEvent(); //add buttom click event
 	});
@@ -28,12 +33,13 @@ function getDataAuto(i) {
 
 function getData() {
 	var target = this;
-	var counter = 0;
+
 	pressed.push(target); //add to pressed
 	$("li").unbind(); //inactivate all buttom
 	//if (ajaxReq != null) //prevent repeated call
 	//	ajaxReq.abort();
 	ajaxReq = $.get("/", function (data) { //get data
+		counter++;
 		$(target).find("span").text(data); //exec later	//write data
 		$("li").each(function () {
 			if (pressed.indexOf(this) == -1)
@@ -41,13 +47,10 @@ function getData() {
 		});
 		$(target).addClass("inactive"); //inactivate the clicked one
 		addEvent(); //activate all buttom except pressed ones
-		if (pressed.length == 5) //if all pressed
+		if (counter == 5) //if all pressed
 			sumUp();
-		else {
-			if (pressed.length != 0)
-				$(".apb").unbind();	//prevent multi call
-			getDataAuto(pressed.length);
-		}
+		if (pressed.length != 0)
+			$(".apb").unbind();
 	});
 	$(target).find("span").text("...").show(); //exec first
 	$("li").addClass("inactive"); //when waiting data, all pause
@@ -68,6 +71,7 @@ function sumUp() {
 
 
 function reset() {
+	counter = 0;
 	pressed = Array();
 	$("span").text("");
 	$("#info-bar").text("").removeClass("enabled");

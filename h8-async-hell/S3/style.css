@@ -6,11 +6,7 @@ html, body {
 	overflow: hidden;
 	font-family: sans-serif;
 }
-#order{
-	width :100px;
-	height: 100px;
-	background-color: lightblue;
-}
+
 #at-plus-container {
 	position: relative;
 	width: 180px;
